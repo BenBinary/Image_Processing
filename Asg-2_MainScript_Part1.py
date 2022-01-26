@@ -64,10 +64,9 @@ ax.set_xlabel('Red')
 ax.set_ylabel('Green')
 ax.set_zlabel('Blue')
 rgb_distribution = fig.add_axes(ax)
-#cv2.imwrite("rgb_distribution.jpg", rgb_distribution)
 #plt.show()
-plt.savefig("rgb_distribution.jpg")
-# plt save image
+# plt.savefig("rgb_distribution.jpg")
+
 
 
 # 2. Task: Convert it to HSV
@@ -76,6 +75,12 @@ img_hsv = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2RGB)
 
 width, height, _ = img_rgb.shape
 
+array_length = width * height
+k = 0
+
+h_val = [0] * array_length
+s_val = [0] * array_length
+v_val = [0] * array_length
 
 for i in range(width):
     for j in range(height):
@@ -85,11 +90,29 @@ for i in range(width):
         bgr_value_red = img_bgr[i, j, 2]
         hsv_val = colorsys.rgb_to_hsv(bgr_value_red, bgr_value_green, bgr_value_blue)
 
+        print(str(hsv_val[0]))
+        print(str(hsv_val[1]))
+        print(str(hsv_val[2]))
+
+        h_val[k] = hsv_val[0]
+        s_val[k] = hsv_val[1]
+        v_val[k] = hsv_val[2]
+
         img_hsv[i][i] = hsv_val
 
         # print("HSV value: " + str(hsv_val))
 
+# Plot the graph
+fig = plt.figure()
+ax = p3.Axes3D(fig)
+ax.scatter(h_val, s_val, v_val)
 
+ax.set_xlabel('Hue')
+ax.set_ylabel('Saturation')
+ax.set_zlabel('Value')
+rgb_distribution = fig.add_axes(ax)
+plt.show()
+# plt.savefig("rgb_distribution.jpg")
 
 cv2.namedWindow("HSV Image", cv2.WINDOW_NORMAL) # this allows for resizing using mouse
 cv2.imshow("HSV Image", img_hsv)
