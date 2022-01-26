@@ -65,7 +65,7 @@ ax.set_ylabel('Green')
 ax.set_zlabel('Blue')
 rgb_distribution = fig.add_axes(ax)
 #plt.show()
-# plt.savefig("./OutputData/rgb_distribution.jpg")
+plt.savefig("./OutputData/rgb_distribution.jpg")
 
 
 
@@ -102,19 +102,15 @@ for i in range(width):
 # Plot the graph
 fig = plt.figure()
 ax = p3.Axes3D(fig)
-ax.scatter(h_val, s_val, v_val, marker='o', facecolors=cv2.cvtColor(img_hsv).reshape(-1,3)/255)
+ax.scatter(h_val, s_val, v_val, marker='o', facecolors=cv2.cvtColor(img_hsv, cv2.COLOR_BGR2HSV).reshape(-1,3)/255)
 
 ax.set_xlabel('Hue')
 ax.set_ylabel('Saturation')
 ax.set_zlabel('Value')
 rgb_distribution = fig.add_axes(ax)
 #plt.show()
-plt.savefig("hsv_distribution.jpg")
-
-cv2.namedWindow("HSV Image", cv2.WINDOW_NORMAL) # this allows for resizing using mouse
-cv2.imshow("HSV Image", img_hsv)
-cv2.imwrite("./OutputData/hsv-image.jpg", img_hsv)
-cv2.waitKey()
+plt.savefig("./OutputData/hsv_distribution.jpg")
 
 
-## Present now the color channels
+
+## Task 3: Present now the color channels
