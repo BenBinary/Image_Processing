@@ -1,0 +1,66 @@
+## 1. Filter - Average ##
+The SSIM for the Averaging blur filter time was: 0.00875211 seconds. SSIM sccre: 0.3581
+The MSE for Averging blur is 90.70053482055664
+## 2. Filter - Gaussian ## 
+ .. Gaussian blur filter time was: 0.00000000 seconds. SSIM sccre: 0.3955
+The MSE for Gaussian is 88.88364919026692
+## 3. Filter - Bilateral ##
+ .. Bilateral blur filter time was: 0.00499988 seconds. SSIM sccre: 0.1621
+The MSE for Bilateral is 24.084515889485676
+## 1. Filter - Average ##
+The SSIM for the Averaging blur filter time was: 0.00198722 seconds. SSIM sccre: 0.3591
+The MSE for Averging blur is 90.83819834391277
+## 2. Filter - Gaussian ## 
+The SSIM for the Gaussian blur filter time was: 0.00113845 seconds. SSIM sccre: 0.3967
+The MSE for Gaussian is 88.88787206013997
+## 3. Filter - Bilateral ##
+The SSIM for the Bilateral blur filter time was: 0.00507641 seconds. SSIM sccre: 0.1620
+The MSE for Bilateral is 24.04865900675456
+## 1. Filter - Average ##
+## 1. Filter - Average ##
+## 1. Filter - Average ##
+## 1. Filter - Average ##
+The SSIM for the Averaging blur filter time was: 0.00800061 seconds. SSIM sccre: 0.0899
+The MSE for Averging blur is 105.744447072347
+## 2. Filter - Gaussian ## 
+The SSIM for the Gaussian blur filter time was: 0.00108933 seconds. SSIM sccre: 0.2777
+The MSE for Gaussian is 105.697203318278
+## 3. Filter - Bilateral ##
+The SSIM for the Bilateral blur filter time was: 0.01995969 seconds. SSIM sccre: 0.9998
+The MSE for Bilateral is 1.8837038675944011
+## 1. Filter - Average ##
+The SSIM for the Averaging blur filter time was: 0.00912404 seconds. SSIM sccre: 0.0605
+The MSE for Averging blur is 106.74729792277019
+## 2. Filter - Gaussian ## 
+The SSIM for the Gaussian blur filter time was: 0.00097895 seconds. SSIM sccre: 0.2441
+The MSE for Gaussian is 108.18649291992188
+## 3. Filter - Bilateral ##
+The SSIM for the Bilateral blur filter time was: 0.00999045 seconds. SSIM sccre: 0.9998
+The MSE for Bilateral is 1.9324010213216145
+## 1. Filter - Average ##
+The SSIM for the Averaging blur filter time was: 0.00795031 seconds. SSIM sccre: 0.0791
+The MSE for Averging blur is 104.6246452331543
+## 2. Filter - Gaussian ## 
+The SSIM for the Gaussian blur filter time was: 0.00000000 seconds. SSIM sccre: 0.2643
+The MSE for Gaussian is 104.52278900146484
+## 3. Filter - Bilateral ##
+The SSIM for the Bilateral blur filter time was: 0.00603104 seconds. SSIM sccre: 0.9997
+The MSE for Bilateral is 2.197455088297526
+## 1. Filter - Average ##
+The SSIM for the Averaging blur filter time was: 0.00798988 seconds. SSIM sccre: 0.1023
+The MSE for Averging blur is 108.59669240315755
+## 2. Filter - Gaussian ## 
+The SSIM for the Gaussian blur filter time was: 0.00203824 seconds. SSIM sccre: 0.2895
+The MSE for Gaussian is 107.8334477742513
+## 3. Filter - Bilateral ##
+The SSIM for the Bilateral blur filter time was: 0.01698208 seconds. SSIM sccre: 0.9996
+The MSE for Bilateral is 2.1544227600097656
+## 1. Filter - Average ##
+The SSIM for the Averaging blur filter time was: 0.00799584 seconds. SSIM sccre: 0.0817
+The MSE for Averging blur is 103.49729792277019
+## 2. Filter - Gaussian ## 
+The SSIM for the Gaussian blur filter time was: 0.00104189 seconds. SSIM sccre: 0.2671
+The MSE for Gaussian is 102.6273422241211
+## 3. Filter - Bilateral ##
+The SSIM for the Bilateral blur filter time was: 0.02102280 seconds. SSIM sccre: 0.9997
+The MSE for Bilateral is 2.1199913024902344
