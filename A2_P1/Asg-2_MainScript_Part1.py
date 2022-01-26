@@ -58,14 +58,14 @@ cv2.waitKey()
 # Plot the graph
 fig = plt.figure()
 ax = p3.Axes3D(fig)
-ax.scatter(r_val, g_val, b_val, marker='o',  facecolors=cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB).reshape(-1,3)/255)
+ax.scatter(r_val, g_val, b_val, marker='o', facecolors=cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB).reshape(-1,3)/255)
 
 ax.set_xlabel('Red')
 ax.set_ylabel('Green')
 ax.set_zlabel('Blue')
 rgb_distribution = fig.add_axes(ax)
 #plt.show()
-# plt.savefig("rgb_distribution.jpg")
+# plt.savefig("./OutputData/rgb_distribution.jpg")
 
 
 
@@ -90,34 +90,30 @@ for i in range(width):
         bgr_value_red = img_bgr[i, j, 2]
         hsv_val = colorsys.rgb_to_hsv(bgr_value_red, bgr_value_green, bgr_value_blue)
 
-        print(str(hsv_val[0]))
-        print(str(hsv_val[1]))
-        print(str(hsv_val[2]))
-
         h_val[k] = hsv_val[0]
         s_val[k] = hsv_val[1]
         v_val[k] = hsv_val[2]
 
         img_hsv[i][i] = hsv_val
+        k = k + 1
 
-        # print("HSV value: " + str(hsv_val))
+       
 
 # Plot the graph
 fig = plt.figure()
 ax = p3.Axes3D(fig)
-ax.scatter(h_val, s_val, v_val)
+ax.scatter(h_val, s_val, v_val, marker='o', facecolors=cv2.cvtColor(img_hsv).reshape(-1,3)/255)
 
 ax.set_xlabel('Hue')
 ax.set_ylabel('Saturation')
 ax.set_zlabel('Value')
 rgb_distribution = fig.add_axes(ax)
-plt.show()
-# plt.savefig("rgb_distribution.jpg")
+#plt.show()
+plt.savefig("hsv_distribution.jpg")
 
 cv2.namedWindow("HSV Image", cv2.WINDOW_NORMAL) # this allows for resizing using mouse
 cv2.imshow("HSV Image", img_hsv)
-cv2.imwrite("hsv-image.jpg", img_hsv)
-# cv2.resizeWindow("HSV Image", 480, 360)
+cv2.imwrite("./OutputData/hsv-image.jpg", img_hsv)
 cv2.waitKey()
 
 
