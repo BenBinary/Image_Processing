@@ -4,7 +4,7 @@
 ################# Module: Image Processing ################
 ##################### Department of Informatics ###########
 ######## E-Mail: benedikt.kurz002@stud.fh-dortmund.de #####
-########## Registration Number:     ###
+########## Registration Number: 21390260 ##################
 ###########################################################
 ###########################################################
 
@@ -16,6 +16,7 @@ import skimage.measure as measure
 import skimage.metrics
 import matplotlib.pyplot as plt
 import colorsys
+import mpl_toolkits.mplot3d.axes3d as p3
 
 # Read the file 
 # 1. Task: Read it as BGR and transform it into RGB
@@ -23,13 +24,27 @@ imageToUseName = './InputData/7-Bali-Resorts-RIMBA-1.jpg'
 img_bgr = cv2.imread(imageToUseName)
 
 width, height, _ = img_bgr.shape
+array_length = width * height
+k = 0
+
+r_val = [0] * array_length
+g_val = [0] * array_length
+b_val = [0] * array_length
 
 for i in range(width):
     for j in range(height):
+
         # Get the rgb values
         bgr_value_blue = img_bgr[i, j, 0]
+        b_val[k] = bgr_value_blue
+
         bgr_value_green = img_bgr[i, j, 1]
+        g_val[k] = bgr_value_green
+
         bgr_value_red = img_bgr[i, j, 2]
+        r_val[k] = bgr_value_red
+
+        k = k + 1
         # print("Blue: " + str(bgr_value_blue) 
         #	+ ", Green: " + str(bgr_value_green) 
         #	+ ", Red: " + str(bgr_value_red)) 
@@ -41,8 +56,18 @@ cv2.imshow("RGB Image", img_rgb)
 cv2.waitKey()
 
 # Plot the graph
+fig = plt.figure()
+ax = p3.Axes3D(fig)
+ax.scatter(r_val, g_val, b_val, marker='o',  facecolors=cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB).reshape(-1,3)/255)
 
-
+ax.set_xlabel('Red')
+ax.set_ylabel('Green')
+ax.set_zlabel('Blue')
+rgb_distribution = fig.add_axes(ax)
+#cv2.imwrite("rgb_distribution.jpg", rgb_distribution)
+#plt.show()
+plt.savefig("rgb_distribution.jpg")
+# plt save image
 
 
 # 2. Task: Convert it to HSV
@@ -64,12 +89,6 @@ for i in range(width):
 
         # print("HSV value: " + str(hsv_val))
 
-
-for i in range(width):
-    for j in range(height):
-        # Get the rgb values
-        rgb_value = img_rgb[i, j, 0]
-        #print(rgb_value)
 
 
 cv2.namedWindow("HSV Image", cv2.WINDOW_NORMAL) # this allows for resizing using mouse
