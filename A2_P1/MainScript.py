@@ -55,6 +55,8 @@ cv2.imshow("RGB Image", img_rgb)
 #cv2.resizeWindow("RGB Image", 480, 360)
 cv2.waitKey()
 
+
+
 # Plot the graph
 fig = plt.figure()
 ax = p3.Axes3D(fig)
@@ -112,5 +114,49 @@ rgb_distribution = fig.add_axes(ax)
 plt.savefig("./OutputData/hsv_distribution.jpg")
 
 
+##################################
+## Start: Task 3 #################
+##################################
 
-## Task 3: Present now the color channels
+blue, green, red = cv2.split(img_bgr)
+ 
+cv2.imshow("RGB_Red", red) # Display the red channel in the image
+cv2.imwrite("./OutputData/RGB_Red.jpg", red)
+cv2.imshow("RGB_Blue", blue) # Display the red channel in the image
+cv2.imwrite("./OutputData/RGB_Blue.jpg", blue)
+cv2.imshow("RGB_Green", green) # Display the red channel in the image
+cv2.imwrite("./OutputData/RGB_Green.jpg", green)
+
+cv2.waitKey()
+
+hue, saturation, value = cv2.split(img_hsv)
+cv2.imshow("HSV_hue", hue) # Display the red channel in the image
+cv2.imwrite("./OutputData/HSV_hue.jpg", hue)
+cv2.imshow("HSV_saturation", hue) # Display the red channel in the image
+cv2.imwrite("./OutputData/HSV_saturation.jpg", saturation)
+cv2.imshow("HSV_value", value) # Display the red channel in the image
+cv2.imwrite("./OutputData/HSV_value.jpg", value)
+
+cv2.waitKey()
+
+##################################
+## End: Task 3 #################
+##################################
+
+
+
+
+
+
+
+##################################
+## Start: Task 4 #################
+## Edge Detection ################
+##################################
+
+# Question what kind of segmentation?
+
+
+##################################
+## End: Task 4 ###################
+##################################
