@@ -1,0 +1,6 @@
+## 6. Compare Canny and normal gray pictures ##
+6-1: The SSIM sccre is: 0.7558
+6-2: The result of the second approach is: 0.0017146844007630293
+## 7. Morphology to detect the edges ##
+7-1: The result of the erosion approach is: 0.0006398628079529702
+7-2: The result of the delation approach is: 0.0050728097397947005
